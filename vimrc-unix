@@ -1,58 +1,91 @@
-"Vim Bundle Manager
-set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+"Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+"Plugin 'file:///home/asahis/.vim/vundle-plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Avoid a name conflict with L9
+"Plugin 'user/L9', {'name': 'newL9'}
+
+
+" All of your Plugins must be added before the following line
 Bundle 'scrooloose/nerdtree'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-bundler'
-Bundle 'vim-scripts/TailMinusF'
-Bundle 'vim-scripts/dbext.vim'
-filetype plugin indent on
-" 
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-" 
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
+ 
+ 
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
 "
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 syntax on
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set noexpandtab
-set ruler
-set hlsearch
-"columns	width of the display
-set co=113
-"lines	number of lines in the display
-set lines=39
-"window	number of lines to scroll for CTRL-F and CTRL-B
-set window=38
- 
-"autocmd! bufwritepost .vimrc source %
-
+set ruler"
+set hlsearch"
 "
-" define OpenURL (OSX)
-":command -bar -nargs=1 OpenURL :!open -a Safari 
-":command -bar -nargs=1 OpenURL :!open 
-":command -bar -nargs=1 OpenURL :!open <args> 
+"" define OpenURL (OSX)
+":command -bar -nargs=1 OpenURL :!open &ltargs&gt
+"":command -bar -nargs=1 OpenURL :!open <args>
 " define OpenURL (Windows)
-":command -bar -nargs=1 OpenURL :!start cmd /cstart /b 
-" define OpenURL (Linux)
-":command -bar -nargs=1 OpenURL :!firefox 
-:command -bar -nargs=1 OpenURL :!firefox <args>
-" Keymaping
-nmap \s :w 
-nmap \q :q! 
-nmap \f <c-f> " Maping '\f' to Ctrl-F (Page Down) for Mac
-nmap \b <c-b> " Maping '\b' to Ctrl-B (Page Up) for Mac
-nmap \d <c-d> " Maping '\d' to Ctrl-d (Half-Page Down) for Mac
-nmap \u <c-u> " Maping '\u' to Ctrl-u (Half-Page Up) for Mac
-nmap \r <c-r> " Maping '\r' to Ctrl-r (Redo) for Mac
-nmap \w <c-w>w " Maping '\w' to Ctrl-w w (Window command) for Mac
+" ":command -bar -nargs=1 OpenURL :!start cmd /cstart /b &ltargs&gt
+" ":command -bar -nargs=1 OpenURL :!start cmd /cstart /b <args>
+" " define OpenURL (Linux)
+" :command -bar -nargs=1 OpenURL :!firefox &ltargs&gt
+" :command -bar -nargs=1 OpenURL :!firefox <args>
+" " Keymaping
+" nmap \s :&ltcr&gt
+" "nmap \s :w<cr>
+" nmap \q :q!&ltcr&gt
+" "nmap \q :q!<cr>
+" nmap \f &ltC-f&lt"Maping '\f' to Ctrl-F (Page Down) for Mac
+" "nmap \f <C-f> " Maping '\f' to Ctrl-F (Page Down) for Mac
+"
+" nmap \b &ltC-b&gt " Maping '\b' to Ctrl-B (Page Up) for Mac
+" "nmap \b <C-b>" Maping '\b' to Ctrl-B (Page Up) for Mac
+"
+" nmap \d &ltC-d&gt " Maping '\d' to Ctrl-d (Half-Page Down) for Mac
+" "nmap \d <C-d>" Maping '\d' to Ctrl-d (Half-Page Down) for Mac
+"
+" nmap \u &ltC-u&gt " Maping '\u' to Ctrl-u (Half-Page Up) for Mac
+" "nmap \u <C-u> " Maping '\u' to Ctrl-u (Half-Page Up) for Mac
+"
+" nmap \r &ltC-r&gt " Maping '\r' to Ctrl-r (Redo) for Mac
+" "nmap \r <C-r> " Maping '\r' to Ctrl-r (Redo) for Mac
+"
+" nmap \w &ltC-w>w " Maping '\w' to Ctrl-w w (Window command) for Mac
+" "nmap \w <C-w>w " Maping '\w' to Ctrl-w w (Window command) for Mac
+" </pre>
+"
+" * Install vim plugins and plugins help file
